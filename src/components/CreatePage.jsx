@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import "./Home.css"
+import "./Home.css";
 export const CreatePage = (props) => {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
@@ -30,10 +30,10 @@ export const CreatePage = (props) => {
       content: "",
       gif: "",
     });
-    
+
     setGifClick(false);
     event.preventDefault();
-    setSearch("")
+    setSearch("");
   }
 
   function expand() {
@@ -63,7 +63,13 @@ export const CreatePage = (props) => {
     return data.map((el) => {
       return (
         <div onClick={handleGifClick} key={el.id} className="gif">
-          <img alt="gif" src={el.images.fixed_height.url} className="gifImage" />
+          <div className="imgDiv">
+            <img
+              alt="gif"
+              src={el.images.fixed_height.url}
+              className="gifImage"
+            />
+          </div>
         </div>
       );
     });
@@ -119,7 +125,7 @@ export const CreatePage = (props) => {
           </Fab>
         </Zoom> */}
         <button onClick={handleGifButton}>GIF</button>
-        <button  onClick={submitPost}>SubmitPost</button>
+        <button onClick={submitPost}>SubmitPost</button>
       </form>
       {isGifClick && (
         <div>
