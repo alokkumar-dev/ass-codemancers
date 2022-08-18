@@ -47,7 +47,7 @@ export const CreatePage = (props) => {
       const results = await axios("https://api.giphy.com/v1/gifs/trending", {
         params: {
           api_key: "bOLLdcT86Qs3Ib2owwNVzc5A6KXLliO8",
-          limit: 4,
+          limit: 5,
         },
       });
       setData(results.data.data);
@@ -68,8 +68,7 @@ export const CreatePage = (props) => {
           alt="gif"
           src={el.images.fixed_height.url}
           className="gifImage"
-          // tabIndex={"0"}
-        />
+         />
       </div>
     ));
   };

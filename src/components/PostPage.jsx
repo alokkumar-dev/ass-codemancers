@@ -9,10 +9,12 @@ export const PostPage = (props) => {
     <>
       <div className="postDiv">
         <div>
-        <img src={props.gif} alt="img" />
-        <h3>{props.content}</h3>
+          <img src={props.gif} alt="img" />
+          <h3>{props.content}</h3>
         </div>
-        <button onClick={handleClick} className="deleteBtn">Delete Post</button>
+        <button onClick={handleClick} className="deleteBtn">
+          Delete Post
+        </button>
       </div>
     </>
   );

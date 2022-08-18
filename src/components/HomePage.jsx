@@ -24,7 +24,8 @@ export const HomePage = () => {
     <div className="homeContainer">
       <div className="leftSide">
         <CreatePage onAdd={addPost} />
-      </div><hr />
+      </div>
+      <hr />
       <div className="rightSide">
         {posts.map((postItem, index) => (
           <PostPage
