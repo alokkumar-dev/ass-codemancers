@@ -1,34 +1,64 @@
-.form_div {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-  width: 50%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.homeContainer {
+  /* border: 1px solid; */
+  width: 90vw;
   margin: auto;
-  margin-top: 20px;
-  padding: 10px;
+  height: 100vh;
+  display: flex;
+  gap: 15px;
 }
-.form_div button {
-  background-color: rgb(80, 220, 231);
-  margin-top: -5%;
-  margin-left: 2%;
-  color: rgb(82, 17, 17);
+.leftSide {
+  flex: 2;
+  /* border: 1px solid red; */
+  text-align: center;
 }
-.form_div button:hover {
-  background-color: rgb(142, 205, 209);
+.rightSide {
+  flex: 3;
+  /* border: 1px solid blue; */
 }
+input {
+  font-size: 16px;
+  border: 2px solid;
+  margin-top: 5px;
+}
+.gifImage {
+  width: 150px;
+  height: 120px;
+  cursor: pointer;
+}
+.gifImgDiv {
+  width: fit-content;
+  margin: auto;
+}
+.gifImgDiv:active {
+  border: 2px solid;
+}
+/* .gifImage:hover {
+  border: 2px solid;
 
-.post_div {
-  border: 2px solid rgb(218, 209, 209);
-  width: 50%;
-  margin: auto;
-  margin-top: 20px;
+} */
+.chooseGif {
+  height: 250px;
+  overflow-x: scroll;
+}
+.postDiv {
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px; */
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  margin-top: 15px;
   border-radius: 5px;
-  font-family: cursive;
+}
+.postDiv > div {
+  display: flex;
+  margin-left: 5px;
+  gap: 15px;
+}
+.deleteBtn{
   font-size: 20px;
-}
-.post_div img {
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-}
-#textbox {
-  border: 2px solid rgb(221, 214, 214);
+  padding: 4px 10px;
+  margin: 5px 20%;
 }
