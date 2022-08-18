@@ -12,7 +12,7 @@ export const PostPage = (props) => {
         <img src={props.gif} alt="img" />
         <h3>{props.content}</h3>
         </div>
-        <button onClick={handleClick} className="deleteBtn">delete</button>
+        <button onClick={handleClick} className="deleteBtn">Delete Post</button>
       </div>
     </>
   );

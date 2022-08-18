@@ -25,6 +25,18 @@ input {
   font-size: 16px;
   border: 2px solid;
   margin-top: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.postCreateForm>input{
+  width: 50%;
+}
+
+.postCreateForm>button{
+  font-size: 16px;
+  margin-left: 10px;
+  padding: 5px;
+  cursor: pointer;
 }
 .gifImage {
   width: 150px;
@@ -59,6 +71,10 @@ input {
 }
 .deleteBtn{
   font-size: 20px;
-  padding: 4px 10px;
+  padding: 4px 15px;
   margin: 5px 20%;
+  background-color: #ff000074;
+  border: 2px solid red;
+  border-radius: 5px;
+  cursor: pointer;
 }

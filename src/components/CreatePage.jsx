@@ -25,15 +25,17 @@ export const CreatePage = (props) => {
   };
 
   function submitPost(event) {
-    props.onAdd(post);
-    setPost({
-      content: "",
-      gif: "",
-    });
+    if (post.content != "") {
+      props.onAdd(post);
+      setPost({
+        content: "",
+        gif: "",
+      });
 
-    setGifClick(false);
-    event.preventDefault();
-    setSearch("");
+      setGifClick(false);
+      event.preventDefault();
+      setSearch("");
+    }
   }
 
   function expand() {
@@ -61,25 +63,22 @@ export const CreatePage = (props) => {
 
   const renderGifs = () => {
     return data.map((el) => (
-        <div onClick={handleGifClick} key={el.id} className="gifImgDiv">
-            <img
-              alt="gif"
-              src={el.images.fixed_height.url}
-              className="gifImage"
-              // tabIndex={"0"}
-            />
-        </div>
-      )
-    );
+      <div onClick={handleGifClick} key={el.id} className="gifImgDiv">
+        <img
+          alt="gif"
+          src={el.images.fixed_height.url}
+          className="gifImage"
+          // tabIndex={"0"}
+        />
+      </div>
+    ));
   };
 
   const gifInputChange = async (event) => {
     setSearch(event.target.value);
     const results = await axios("https://api.giphy.com/v1/gifs/search", {
       params: {
-        //S iaU6SYagwWlqYC7Gb7GHRuK5c3PdCu9T
         api_key: "iaU6SYagwWlqYC7Gb7GHRuK5c3PdCu9T",
-        // Me:-  iaU6SYagwWlqYC7Gb7GHRuK5c3PdCu9T
         q: search,
         limit: 4,
       },
@@ -97,7 +96,7 @@ export const CreatePage = (props) => {
   }
   return (
     <div className="form_div">
-      <form className="create-post">
+      <form className="postCreateForm">
         <input
           name="content"
           onClick={expand}
@@ -105,7 +104,7 @@ export const CreatePage = (props) => {
           value={post.content}
           id="textbox"
           placeholder="Write a post..."
-          rows={isExpanded ? 3 : 1}
+          required
         />
         <button onClick={handleGifButton}>GIF</button>
         <button onClick={submitPost}>SubmitPost</button>
